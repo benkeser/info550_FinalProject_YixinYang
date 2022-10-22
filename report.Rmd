@@ -1,0 +1,72 @@
+---
+title: "Toolkit_Final_Project"
+author: "Yixin Yang"
+date: "`r Sys.Date()`"
+output: html_document
+---
+# Introduction
+
+## Description of data set
+I find a suitable data set "COVID-19 Vaccinations in the United States,Jurisdiction" from CDC data. 
+
+The data is about overall US COVID-19 Vaccine deliveries and administration data at national and jurisdiction level. Data represents all vaccine partners including jurisdictional partner clinics, retail pharmacies, long-term care facilities, dialysis centers, Federal Emergency Management Agency and Health Resources and Services Administration partner sites, and federal entity facilities. 
+
+##  Analysis objectives
+In below, I will analyse on two questions and give a summary table of number of vaccine been delivered.
+
+One is "What date it is for the top 6 quantity of vaccine delivery in Gerogia"? 
+Another is how to visualize the number of delivered doses and see the trend of vaccine delivery. 
+
+The Summary table and first result are showed by table and the second result is showed by line chart.
+
+```{r, data-pre, echo=FALSE,include = FALSE}
+library(tidyverse)
+library(lubridate)
+library(ggplot2)
+library(scales)
+library(dplyr)
+```
+
+```{r,summary_table}
+here::i_am("report.Rmd")
+summary_vaccine_table <- readRDS(
+  file = here::here("output/summary_vaccine_table.rds")
+)
+summary_vaccine_table
+
+```
+
+```{r Top6_table}
+here::i_am("report.Rmd")
+Top6_table <- readRDS(
+  file = here::here("output/Top6_table.rds")
+)
+Top6_table
+
+```
+
+# Description of the table
+The table shows the top six number of deliveray date in Georgia ordered by four mainstream Covid-19 vaccine suppliers: Janssen, Moderna, Pfizer, and	Novavax. We can see from the table that the main delivery time is in August and September. The most vaccines are delivered on this day 09/14/2022.It seems like people perfer to get Pfizer and Moderna vaccine.
+The highest number of Janssen vaccine delivery is 854200. 
+The highest number of Moderna vaccine delivery is 9611400.
+The highest number of Pfizer vaccine delivery is14419055.
+The highest number of Novavax vaccine delivery is 27600.
+
+
+```{r fig.fullwidth=TRUE}
+
+#|fig.align = 'center'
+#|fig.height = 8
+#|fig.width = 12
+
+knitr::include_graphics(
+  here::here("output/Deliver_plot.png")
+)
+
+```
+
+# Description of the figure
+From the graph we can see that the demond of Covid-19 vaccine was increasing over time. Over fifteen million Pfizer vaccine were delivered at the end of September. Not only Pfizer has the highest daily delivery quantity, it also has the highest increasing trend. 
+In additon, we can see from the graph that only in late July, 2022, Novavax started to be delivered. Maybe because full results from Nuvaxovid's pivotal phase III trial were published in December 2021.
+
+
