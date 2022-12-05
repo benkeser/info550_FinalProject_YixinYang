@@ -21,10 +21,8 @@ The Summary table and first result are showed by table and the second result is 
 
 ```{r, data-pre, echo=FALSE,include = FALSE}
 library(tidyverse)
-library(lubridate)
-library(ggplot2)
-library(scales)
-library(dplyr)
+#library(lubridate)
+#library(scales)
 ```
 
 ```{r,summary_table}

@@ -2,9 +2,7 @@ here::i_am("code/01_make_table1.R")
 
 data <- read.csv(here::here("COVID-19_Vaccinations_in_the_United_States_Jurisdiction.csv"))
 library(Hmisc)
-
 library(pacman)
-
 pacman::p_load(
   knitr,
   kableExtra,
@@ -18,7 +16,7 @@ knitr::kable(summary(data[,5:8]),)
 
 
 
-kbl(summary(data[,5:8]), caption = "Summary of 4 Tpyes of Vaccine",
+kableExtra::kbl(summary(data[,5:8]), caption = "Summary of 4 Tpyes of Vaccine",
     booktabs = T,
     centering = T,
     align = c("l", "c","c","c","c")) %>%

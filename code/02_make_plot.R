@@ -4,9 +4,8 @@ data <- read.csv(here::here("COVID-19_Vaccinations_in_the_United_States_Jurisdic
 
 library(tidyverse)
 library(lubridate)
-library(ggplot2)
 library(scales)
-library(dplyr)
+
 
 colnames(data)[5:8] <- c("Janssen","Moderna","Pfizer","Novavax")
 df_plot<-data[,c(1,3,5:8)] %>% 
