@@ -32,5 +32,5 @@ report/report.html:
 
 .PHONY: clean
 clean: 
-	rm -f output/*.rds && rm -f output/*.png && rm -f *.html
+	rm -f output/*.rds && rm -f output/*.png && rm -f *.html && rm -f report/*.html
 	
