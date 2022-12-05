@@ -21,9 +21,10 @@
   - show Top6_table, summary_vaccine_table, Deliver_plot
 
 `Dockerfile`
+- DOCKER BUILD: 
  Instructions for building the image: 
    1. Pull r-ubuntu from Docker hub
-   2. Create project directory and sed it to working directory
+   2. Create project directory and send it to working directory
    3. CREATE an ENV variable  set environment variables in image to fit windows systems and     Mac/Linux-OS-specific target
    4. Create code output directories in container
    5. Copy necessary files to the container directories
@@ -32,9 +33,20 @@
    8. Install all the packages in the container
    9. Move reort.html from container to local report directory
    
- link to the image on DockerHub:
+ link to the image on DockerHub:   https://hub.docker.com/layers/yyan655/project_image/latest/images/sha256:86de9fa3b90e0d25fadf05531a192739aa87dc7c74c227aa3e1e0a4a514b62fe
+ 
+- DOCKER RUN:
  Instructions for running the automated version of the image: 
    1. make project_image
+    Using make rule to build docker image
    2. make report/report.html
- 
+    By including all the files needed to update the docker both renv file and code and data files, in the container, run all the code and generate report.html. Using make rule to mount project/report with local report directory. And showing report.html in the local report directory.
+    
 `Makefile`
+  - report.html
+  - output/table.rds
+  - output/plot.png
+  - install
+  - project_image
+  - report/report.html
+  - clean
