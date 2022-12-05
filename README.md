@@ -31,8 +31,9 @@
    6. Install needed packages by renv snapshot
    7. Install needed packages manually
    8. Install all the packages in the container
-   9. Move reort.html from container to local report directory
-   
+   9. Move report.html from container to local report directory
+- DOCKER PULL 
+   1. pull the image directly from the DOCKER public repository
  link to the image on DockerHub:   https://hub.docker.com/layers/yyan655/project_image/latest/images/sha256:86de9fa3b90e0d25fadf05531a192739aa87dc7c74c227aa3e1e0a4a514b62fe
  
 - DOCKER RUN:
@@ -48,5 +49,6 @@
   - output/plot.png
   - install
   - project_image
+  - pull_image
   - report/report.html
   - clean

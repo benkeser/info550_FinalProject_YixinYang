@@ -21,6 +21,9 @@ RUN mkdir report
 COPY COVID-19_Vaccinations_in_the_United_States_Jurisdiction.csv .
 COPY code code
 COPY Makefile .
+copy README.md .
+
+
 #Install needed packages by renv snapshot
 COPY .Rprofile .
 COPY renv.lock .

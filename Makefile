@@ -18,12 +18,16 @@ PROJECTFILES = report.Rmd code/01_make_table1.R code/02_make_plot.R code/03_rend
 RENVFILERS = renv.lock renv/activate.R renv/settings.dcf
  #rules to build image
 project_image: Dockerfile $(PROJECTFILES) $(RENVFILERS)
-	docker build -t project_image .
-	touch $@
+	docker build -t yyan655/project_image .
+
+
+# Pulling the project image from Dockerhub (faster)
+pull_image:
+	docker pull yyan655/project_image
 
 # rule to buld the report automatically 
-report/report.html: project_image
-	docker run -v "${WHICH_MESSAGE}$$(pwd)/report":/project/report project_image
+report/report.html:
+	docker run -v "/$$(pwd)/report":/project/report yyan655/project_image
 
 
 .PHONY: clean
