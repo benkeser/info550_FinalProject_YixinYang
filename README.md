@@ -37,9 +37,9 @@
  
 - DOCKER RUN:
  Instructions for running the automated version of the image: 
-   1. make project_image
+   1. make project_image\
     Using make rule to build docker image
-   2. make report/report.html
+   2. make report/report.html\
     By including all the files needed to update the docker both renv file and code and data files, in the container, run all the code and generate report.html. Using make rule to mount project/report with local report directory. And showing report.html in the local report directory.
     
 `Makefile`
